@@ -1,0 +1,11 @@
+{
+  "type": "astronomica:nothingness",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "astronomica:nothingness"
+    },
+    "settings": "astronomica:nothingness"
+  }
+}

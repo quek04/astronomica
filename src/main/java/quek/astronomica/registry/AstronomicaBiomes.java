@@ -41,6 +41,8 @@ public class AstronomicaBiomes {
                 .specialEffects(new BiomeSpecialEffects.Builder()
                         .skyColor(0)
                         .fogColor(0)
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
                         .build())
                 .build()
         );
@@ -54,6 +56,10 @@ public class AstronomicaBiomes {
                 .downfall(0.8F)
                 .temperature(0.8F)
                 .specialEffects(new BiomeSpecialEffects.Builder()
+                        .skyColor(9355132)
+                        .fogColor(12648387)
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
                         .build())
                 .build()
         );
@@ -67,6 +73,10 @@ public class AstronomicaBiomes {
                 .downfall(0.8F)
                 .temperature(0.3F)
                 .specialEffects(new BiomeSpecialEffects.Builder()
+                        .skyColor(0)
+                        .fogColor(0)
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
                         .build())
                 .build()
         );
@@ -82,6 +92,8 @@ public class AstronomicaBiomes {
                 .specialEffects(new BiomeSpecialEffects.Builder()
                         .skyColor(0)
                         .fogColor(0)
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
                         .build())
                 .build()
         );

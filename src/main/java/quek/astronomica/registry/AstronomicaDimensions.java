@@ -55,7 +55,7 @@ public class AstronomicaDimensions {
                 1.0,
                 false,
                 false,
-                0,
+                -64,
                 384,
                 384,
                 BlockTags.INFINIBURN_OVERWORLD,
@@ -72,7 +72,7 @@ public class AstronomicaDimensions {
                 1.0,
                 false,
                 false,
-                0,
+                -64,
                 384,
                 384,
                 BlockTags.INFINIBURN_OVERWORLD,
@@ -89,7 +89,7 @@ public class AstronomicaDimensions {
                 1.0,
                 false,
                 false,
-                0,
+                -64,
                 384,
                 384,
                 BlockTags.INFINIBURN_OVERWORLD,
@@ -106,7 +106,7 @@ public class AstronomicaDimensions {
                 1.0,
                 false,
                 false,
-                0,
+                -64,
                 384,
                 384,
                 BlockTags.INFINIBURN_OVERWORLD,
@@ -128,7 +128,7 @@ public class AstronomicaDimensions {
 
     public static void bootstrapNoise(BootstrapContext<NoiseGeneratorSettings> context) {
         context.register(LUNA_NOISE_GEN, new NoiseGeneratorSettings(
-                NoiseSettings.create(0, 384, 1, 2),
+                NoiseSettings.create(-64, 384, 1, 2),
                 Blocks.STONE.defaultBlockState(),
                 Blocks.AIR.defaultBlockState(),
                 new NoiseRouter(
@@ -157,9 +157,9 @@ public class AstronomicaDimensions {
                 false
         ));
         context.register(ERSATZ_NOISE_GEN, new NoiseGeneratorSettings(
-                NoiseSettings.create(0, 384, 1, 2),
+                NoiseSettings.create(-64, 384, 1, 2),
                 Blocks.STONE.defaultBlockState(),
-                Blocks.AIR.defaultBlockState(),
+                Blocks.WATER.defaultBlockState(),
                 new NoiseRouter(
                         DensityFunctions.zero(),
                         DensityFunctions.zero(),
@@ -179,14 +179,14 @@ public class AstronomicaDimensions {
                 ),
                 SurfaceRules.state(Blocks.STONE.defaultBlockState()),
                 List.of(),
-                0,
+                63,
                 false,
                 false,
                 false,
                 false
         ));
         context.register(VESTIGE_NOISE_GEN, new NoiseGeneratorSettings(
-                NoiseSettings.create(0, 384, 1, 2),
+                NoiseSettings.create(-64, 384, 1, 2),
                 Blocks.STONE.defaultBlockState(),
                 Blocks.AIR.defaultBlockState(),
                 new NoiseRouter(
@@ -215,7 +215,7 @@ public class AstronomicaDimensions {
                 false
         ));
         context.register(NOTHINGNESS_NOISE_GEN, new NoiseGeneratorSettings(
-                NoiseSettings.create(0, 384, 1, 2),
+                NoiseSettings.create(-64, 384, 1, 2),
                 Blocks.STONE.defaultBlockState(),
                 Blocks.AIR.defaultBlockState(),
                 new NoiseRouter(
