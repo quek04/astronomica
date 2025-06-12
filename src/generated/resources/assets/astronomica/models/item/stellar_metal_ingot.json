@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "astronomica:item/stellar_metal_ingot"
+  }
+}

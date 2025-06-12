@@ -14,7 +14,13 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import quek.astronomica.data.AstronomicaBlockStates;
+import quek.astronomica.data.AstronomicaItemModels;
+import quek.astronomica.data.AstronomicaLang;
 import quek.astronomica.data.AstronomicaRegistries;
+import quek.astronomica.registry.AstronomicaBlocks;
+import quek.astronomica.registry.AstronomicaItems;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -26,6 +32,15 @@ public class Astronomica {
 
     public Astronomica(IEventBus bus) {
         bus.addListener(this::gatherData);
+
+        DeferredRegister<?>[] registers = {
+                AstronomicaBlocks.BLOCKS,
+                AstronomicaItems.ITEMS
+        };
+
+        for (DeferredRegister<?> register : registers) {
+            register.register(bus);
+        }
     }
 
     public void gatherData(GatherDataEvent event) {
@@ -33,6 +48,10 @@ public class Astronomica {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
+
+        generator.addProvider(event.includeClient(), new AstronomicaBlockStates(output, helper));
+        generator.addProvider(event.includeClient(), new AstronomicaItemModels(output, helper));
+        generator.addProvider(event.includeClient(), new AstronomicaLang(output));
 
         DatapackBuiltinEntriesProvider datapackProvider = new AstronomicaRegistries(output, provider);
         generator.addProvider(event.includeServer(), datapackProvider);

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "astronomica:block/stellar_metal_ore"
+  }
+}
